@@ -1,0 +1,16 @@
+version: "3"
+services:
+  sonarqube:
+    image: sonarqube:lts
+    ports:
+      - 7000:7000
+    networks:
+      - cicd
+  jenkins:
+    image: jenkins/jenkins:2.249.2-jdk11
+    ports:
+      - 6000:6000
+    networks:
+      - cicd
+networks:
+  cicd:
